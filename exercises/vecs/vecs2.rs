@@ -7,13 +7,11 @@
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for element in v.iter_mut() {
         // TODO: Fill this up so that each element in the Vec `v` is
         // multiplied by 2.
-        ???
+        *element *= 2;
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
@@ -24,7 +22,7 @@ fn vec_map(v: &Vec<i32>) -> Vec<i32> {
     v.iter().map(|element| {
         // TODO: Do the same thing as above - but instead of mutating the
         // Vec, you can just return the new number!
-        ???
+        element * 2
     }).collect()
 }
 
@@ -34,6 +32,7 @@ mod tests {
 
     #[test]
     fn test_vec_loop() {
+        // 1.. 表示无穷  filter过滤能被整除2的, take(5)取前5项, collect将迭代器转换为vec动态数组
         let v: Vec<i32> = (1..).filter(|x| x % 2 == 0).take(5).collect();
         let ans = vec_loop(v.clone());
 
