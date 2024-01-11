@@ -3,8 +3,7 @@
 // Execute `rustlings hint iterators4` or use the `hint` watch subcommand for a
 // hint.
 
-// I AM NOT DONE
-
+// 斐波那契数列
 pub fn factorial(num: u64) -> u64 {
     // Complete this function to return the factorial of num
     // Do not use:
@@ -15,6 +14,13 @@ pub fn factorial(num: u64) -> u64 {
     // For an extra challenge, don't use:
     // - recursion
     // Execute `rustlings hint iterators4` for hints.
+    // 1.
+    // if num == 0 {
+    //     return 1;
+    // }
+    // (1..=num).reduce(|accm, item| accm * item).unwrap()
+    // 2.
+   (1..=num).fold(1, |acc,x| acc * x )
 }
 
 #[cfg(test)]
